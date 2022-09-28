@@ -1,5 +1,5 @@
 :root {
-    --bg-nav: rgb(0, 0, 0, 0.5);
+    --bg-nav: rgba(255, 255, 255, 0.2);
     --hover-button: rgba(255, 255, 255, 0.2);
     --active-button: #90ee90;
     --close-button: rgb(201, 30, 30);
@@ -26,6 +26,45 @@ a {
     text-decoration: none;
     color: white;
 }
+
+body {
+    background-color: black;
+}
+/* --------- BODY CONTENT ---------- */
+body .top-icon {
+    color: white;
+    position: fixed;
+    font-size: 14px;
+}
+
+.top-icon.left {
+    top: .5em;
+    left: .5em;
+}
+
+.top-icon.left i {
+    background-color: var(--bg-nav);
+    color: var(--active-button);
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.top-icon.right {
+    top: .5em;
+    right: .5em;
+}
+
+.top-icon.right span {
+    background-color: var(--bg-nav);
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.top-icon.right span:first-child {
+    margin-right: .5em;
+}
+
+
 /* ----- NAV ----- */
 nav {
     background-color: var(--bg-nav);
