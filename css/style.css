@@ -1,10 +1,10 @@
 :root {
     --bg-nav: #333333;
-    --transparent-button: rgba(255, 255, 255, 0.2);
+    --transparent-button: rgba(255, 255, 255, .2);
+    --transparent-button-black: rgba(0, 0, 0, .4);
     --active-button: #90ee90;
     --close-button: rgb(201, 30, 30);
     --close-button-hover: rgb(225, 21, 21);
-
     /* GAP SINGLE VIDEO  */
     --gap-single-video: .5em;
 }
@@ -32,8 +32,9 @@ a {
 
 body {
     background-color: black;
-    overflow-y: auto;
+    overflow: auto;
 }
+
 /* --------- TOP ICON ---------- */
 body .top-icon {
     color: white;
@@ -44,6 +45,8 @@ body .top-icon {
 .top-icon.left {
     top: .5em;
     left: .5em;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .top-icon.left i {
@@ -56,6 +59,8 @@ body .top-icon {
 .top-icon.right {
     top: .5em;
     right: .5em;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .top-icon.right span {
@@ -78,10 +83,8 @@ body .top-icon {
 }
 
 .single-video {
-    min-width: 13%;
-    min-height: 10%;
-    flex-basis: calc(100% / 7 - var(--gap-single-video) * 6);
-    flex-grow: 1;
+    min-width: 190px;
+    flex: 1 calc(100% / 7 - var(--gap-single-video) * 6);
     position: relative;
 }
 
@@ -101,7 +104,7 @@ body .top-icon {
     position: absolute;
     left: 0;
     bottom: 4%;
-    background-color: var(--transparent-button);
+    background-color: var(--transparent-button-black);
     padding: 2%;
     border-radius: 5px;
     font-size: 12px;
@@ -142,10 +145,6 @@ nav {
     flex-direction: column;
 }
 
-.nav-button.flexbox {
-    align-self: center;
-}
-
 .nav-button .button i {
     font-size: 22px;
 }
@@ -160,12 +159,12 @@ nav {
     margin: 4%;
 }
 
-.nav-button .button i.active {
-    color: var(--active-button);
-}
-
 .nav-button .button i.dropdown-icon:hover {
     background-color: var(--transparent-button);
+}
+
+.nav-button .button i.active {
+    color: var(--active-button);
 }
 
 .nav-button .button p {
@@ -174,7 +173,7 @@ nav {
 
 .nav-button .close-button {
     background-color: var(--close-button);
-    padding: .6em 1.6em;
+    padding: .5em 1.5em;
     margin-right: 1em;
     border-radius: 10px;
     font-size: 16px;
