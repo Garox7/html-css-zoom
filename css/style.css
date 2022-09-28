@@ -1,9 +1,12 @@
 :root {
-    --bg-nav: rgba(255, 255, 255, 0.2);
-    --hover-button: rgba(255, 255, 255, 0.2);
+    --bg-nav: #333333;
+    --transparent-button: rgba(255, 255, 255, 0.2);
     --active-button: #90ee90;
     --close-button: rgb(201, 30, 30);
     --close-button-hover: rgb(225, 21, 21);
+
+    /* GAP SINGLE VIDEO  */
+    --gap-single-video: .5em;
 }
 
 * {
@@ -29,8 +32,9 @@ a {
 
 body {
     background-color: black;
+    overflow-y: auto;
 }
-/* --------- BODY CONTENT ---------- */
+/* --------- TOP ICON ---------- */
 body .top-icon {
     color: white;
     position: fixed;
@@ -43,7 +47,7 @@ body .top-icon {
 }
 
 .top-icon.left i {
-    background-color: var(--bg-nav);
+    background-color: var(--transparent-button);
     color: var(--active-button);
     padding: 4px;
     border-radius: 5px;
@@ -55,7 +59,7 @@ body .top-icon {
 }
 
 .top-icon.right span {
-    background-color: var(--bg-nav);
+    background-color: var(--transparent-button);
     padding: 4px;
     border-radius: 5px;
 }
@@ -64,6 +68,51 @@ body .top-icon {
     margin-right: .5em;
 }
 
+/* ------ CONTAINER VIDEO ------- */
+.container-video {
+    width: 90vw;
+    margin: 10vh auto 10vh auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: var(--gap-single-video);
+}
+
+.single-video {
+    min-width: 13%;
+    min-height: 10%;
+    flex-basis: calc(100% / 7 - var(--gap-single-video) * 6);
+    flex-grow: 1;
+    position: relative;
+}
+
+.single-video img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.single-video img.speaking {
+    border: 2px solid var(--active-button);
+}
+
+.single-video .audio-badge {
+    color: white;
+    position: absolute;
+    left: 0;
+    bottom: 4%;
+    background-color: var(--transparent-button);
+    padding: 2%;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.single-video .hands {
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    font-size: 25px;
+}
 
 /* ----- NAV ----- */
 nav {
@@ -86,7 +135,7 @@ nav {
 }
 
 .nav-button .button:hover {
-    background-color: var(--hover-button);
+    background-color: var(--transparent-button);
 }
 
 .nav-button .button > .flexbox {
@@ -116,7 +165,7 @@ nav {
 }
 
 .nav-button .button i.dropdown-icon:hover {
-    background-color: var(--hover-button);
+    background-color: var(--transparent-button);
 }
 
 .nav-button .button p {
