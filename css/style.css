@@ -1,0 +1,98 @@
+:root {
+    --bg-nav: rgb(0, 0, 0, 0.5);
+    --hover-button: rgba(255, 255, 255, 0.2);
+    --active-button: #90ee90;
+    --close-button: rgb(201, 30, 30);
+    --close-button-hover: rgb(225, 21, 21);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+}
+
+.flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+/* ----- NAV ----- */
+nav {
+    background-color: var(--bg-nav);
+    color: white;
+    font-size: 12px;
+    height: 70px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    padding: .2em .2em;
+}
+
+.nav-button .button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.nav-button .button:hover {
+    background-color: var(--hover-button);
+}
+
+.nav-button .button > .flexbox {
+    flex-direction: column;
+}
+
+.nav-button.flexbox {
+    align-self: center;
+}
+
+.nav-button .button i {
+    font-size: 22px;
+}
+
+.nav-button .button i.dropdown-icon {
+    position: absolute;
+    font-size: 14px;
+    border-radius: 5px;
+    top: 0;
+    right: 0;
+    padding: 4%;
+    margin: 4%;
+}
+
+.nav-button .button i.active {
+    color: var(--active-button);
+}
+
+.nav-button .button i.dropdown-icon:hover {
+    background-color: var(--hover-button);
+}
+
+.nav-button .button p {
+    margin-top: .4em;
+}
+
+.nav-button .close-button {
+    background-color: var(--close-button);
+    padding: .6em 1.6em;
+    margin-right: 1em;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.nav-button .close-button:hover {
+    background-color: var(--close-button-hover);
+}
